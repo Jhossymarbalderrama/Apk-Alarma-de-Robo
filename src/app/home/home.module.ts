@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { AppMaterialModule } from '../app-material.module';
+import { ModalPasswordPage } from '../modal-password/modal-password.page';
+
 
 
 @NgModule({
@@ -12,8 +15,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    AppMaterialModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, ModalPasswordPage]
 })
 export class HomePageModule {}

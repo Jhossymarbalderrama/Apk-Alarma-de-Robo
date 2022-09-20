@@ -1,0 +1,56 @@
+
+<ion-content style="width: 100%;height: 100%;"> 
+  <div class="head">
+    <div class="page_Titulo" align="center">
+      Inicio de Sesión
+    </div>
+  </div>
+  
+  <div class="body">    
+      <div class="logoLogin" align="center">
+        <img class="IconLogin" src="../../assets/img/iconoConFondo.png" width="180px" height="180px">
+      </div>     
+
+      <ion-item class="inputsR">
+        <ion-label>
+          Correo
+        </ion-label>
+        <ion-input id="email" placeholder="ejempló@gmail.com" #email="ngModel" type="email" [(ngModel)]="user.email" required></ion-input>
+      </ion-item>
+
+      <span id="span_email"  *ngIf="email.touched && !email.valid && spanCorreo">
+        *Ingrese Correo.
+      </span>
+      <ion-item class="inputsR">
+        <ion-label>
+          Contraseña
+        </ion-label>
+        <ion-input id="password" placeholder="Contraseña" #password="ngModel" type="password" [(ngModel)]="user.password"  required></ion-input>
+      </ion-item>
+      
+      <span id="span_password" *ngIf="password.touched && !password.valid && spanPassw">
+        *Ingrese Contraseña.
+      </span> 
+      
+      <div style="width: 100%;text-align: center;">
+        <p style="color:black; font-weight: bold;margin-top: 20px;margin-bottom: 15px;">
+          Accesos Rápidos          
+        </p>
+        <mat-button-toggle-group appearance="fontStyle" name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle class="acceso-toggle" style="margin-right: 10px;" (click)="autoLogin(1)">Usuario</mat-button-toggle>
+          <mat-button-toggle class="acceso-toggle" (click)="autoLogin(2)">Invitado</mat-button-toggle>
+          <mat-button-toggle class="acceso-toggle" style="margin-left: 10px;"(click)="autoLogin(3)">Admin</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>             
+   
+    <div class="botones_sesion_registrar" >
+      <ion-button  color="mybotoncolor" style="margin-top: 25px;margin-bottom: 25px; color:black;height: 80px;font-weight: bold;font-size: 24px;" size="large" expand="block" (click)="onLogin()">Iniciar Sesión</ion-button>
+      <!-- <ion-button  color="mybotoncolor" style="margin-top: 10px;" size="large" expand="block" routerLink="/register">Registrarse</ion-button> -->
+    </div>
+    <div class="page_Titulo_Alarma" align="center">
+      Alarma
+    </div> 
+  </div> 
+
+  <div *ngIf="!load" class="spinner"></div>  
+</ion-content>

@@ -1,7 +1,8 @@
 {
   "name": "Alarma",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
